@@ -1,0 +1,22 @@
+/* Prime Reach Exports — temporary image-led category cards, v1 */
+.catalog-grid{align-items:stretch}
+.catalog-card{padding:0;overflow:hidden;min-height:410px;border:1px solid #e0e4dc;background:#fff;display:flex;flex-direction:column;justify-content:flex-start;transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s}
+.catalog-card:hover{transform:translateY(-7px);box-shadow:0 25px 50px #0c282c17}
+.catalog-card[hidden]{display:none!important}
+.catalog-card .catalog-image{height:218px;position:relative;overflow:hidden;background:linear-gradient(125deg,#d4d7cc,#f0ede3);flex-shrink:0}
+.catalog-card .catalog-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.catalog-card:hover .catalog-image img{transform:scale(1.065)}
+.catalog-card .image-pill{position:absolute;bottom:12px;left:14px;background:rgba(12,40,44,.84);color:#f8f5ef;backdrop-filter:blur(10px);font-size:9px;letter-spacing:.095em;text-transform:uppercase;padding:7px 10px}
+.catalog-card .catalog-body{padding:28px 29px 5px;flex:1}
+.catalog-card .catalog-body h3{font-size:clamp(23px,2.3vw,30px);line-height:1.2;margin:14px 0 13px;font-weight:650}
+.catalog-card .catalog-body p{font-size:13px;color:#627475;line-height:1.7}
+.catalog-card .catalog-app{font-size:10px!important;letter-spacing:.035em;color:#89938d!important;margin-bottom:16px}
+.catalog-card>.text-link{margin:12px 29px 29px;align-self:flex-start}
+.emery-catalog .catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.emery-catalog .catalog-card .catalog-image{height:275px}
+.emery-catalog .catalog-card .catalog-body h3{font-size:clamp(25px,2.8vw,36px)}
+.emery-catalog .catalog-card .catalog-body{padding:29px 32px 6px}
+.emery-catalog .catalog-card>.text-link{margin-left:32px}
+@media (max-width:980px){.emery-catalog .catalog-card .catalog-image{height:235px}}
+@media (max-width:680px){.emery-catalog .catalog-grid,.catalog-grid{grid-template-columns:1fr}.catalog-card .catalog-image,.emery-catalog .catalog-card .catalog-image{height:230px}.catalog-card .catalog-body{padding:25px 23px 4px}.emery-catalog .catalog-card .catalog-body{padding:25px 23px 4px}.catalog-card>.text-link,.emery-catalog .catalog-card>.text-link{margin:12px 23px 26px}.catalog-card{min-height:0}}
+@media(prefers-reduced-motion:reduce){.catalog-card,.catalog-card img{transition:none!important}}
