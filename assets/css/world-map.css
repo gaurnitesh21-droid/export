@@ -30,3 +30,27 @@
 @media(max-width:980px){.world-panel.world-panel-map{min-height:690px;padding:95px 0 75px}.world-map-layout{grid-template-columns:1fr}.world-map-copy{max-width:560px}.world-panel-map .world-map-stage:after{background:linear-gradient(90deg,#08252af2 0%,#08252acc 43%,#08252a4a 100%),linear-gradient(0deg,#08252ae8,transparent 30%,transparent 70%,#08252abb)}.world-map-side-label{display:none}}
 @media(max-width:680px){.world-panel.world-panel-map{min-height:660px;padding:74px 0 48px}.world-map-drift{width:1450px;left:59%}.world-map-copy{padding:35px 0 65px}.world-map-copy .tagline{font-size:clamp(45px,10vw,60px)}.world-map-copy p{font-size:14px}.world-panel-map .world-map-stage:after{background:linear-gradient(90deg,#08252af4 0%,#08252acc 55%,#08252a6b 100%),linear-gradient(0deg,#08252aea,transparent 35%,transparent 75%,#08252abf)}.world-map-scroll-cue{display:none}.world-map-bottom span{font-size:9px;letter-spacing:.09em}}
 @media(prefers-reduced-motion:reduce){.world-map-drift{transform:translate3d(-50%,-50%,0)!important;will-change:auto}.world-route,.world-map-route-layer .map-origin-ring{animation:none!important}.world-map-route-layer .map-origin-ring{opacity:.65;transform:scale(1)}}
+
+
+/* Sphere-to-planisphere intro: the existing horizontal scroll parallax remains untouched.
+   The same vector cartography opens from a shaded globe into the full-width flat map. */
+.world-panel-map{--globe-size:370px;--globe-radius:185px;--globe-x:72%}
+.world-map-cartography{position:absolute;inset:0;clip-path:circle(180% at var(--globe-x) 50%);transition:clip-path 1.03s cubic-bezier(.19,.92,.18,1)}
+.world-map-contours{transform:scale(1);transform-origin:var(--globe-x) 50%;transition:transform 1.03s cubic-bezier(.19,.92,.18,1)}
+.world-map-route-layer{transition:opacity .42s ease .50s}
+.world-map-globe{position:absolute;left:var(--globe-x);top:50%;width:var(--globe-size);aspect-ratio:1;transform:translate(-50%,-50%) scale(1.32);border-radius:50%;overflow:hidden;opacity:0;pointer-events:none;background:radial-gradient(circle at 28% 24%,#e2eee817 0%,#d0e7de08 31%,#0a2f3159 60%,#04191fdc 98%);box-shadow:inset 17px 12px 34px #c5ddcc29,inset -35px -17px 48px #061319df,0 0 40px #d3ae7647;transition:opacity .43s ease,transform .92s cubic-bezier(.19,.92,.18,1);will-change:opacity,transform}
+.world-map-globe svg{display:block;width:100%;height:100%}
+.world-panel-map.is-map-ready .world-map-cartography{clip-path:circle(var(--globe-radius) at var(--globe-x) 50%)}
+.world-panel-map.is-map-ready .world-map-contours{transform:scaleX(.81) scaleY(1.035)}
+.world-panel-map.is-map-ready .world-map-route-layer{opacity:0}
+.world-panel-map.is-map-ready .world-map-globe{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.world-panel-map.is-map-ready.is-unfolded .world-map-cartography{clip-path:circle(180% at var(--globe-x) 50%)}
+.world-panel-map.is-map-ready.is-unfolded .world-map-contours{transform:scale(1)}
+.world-panel-map.is-map-ready.is-unfolded .world-map-route-layer{opacity:1}
+.world-panel-map.is-map-ready.is-unfolded .world-map-globe{opacity:0;transform:translate(-50%,-50%) scale(1.38)}
+/* A centered editorial composition after removing the former footer prompts. */
+.world-panel.world-panel-map{min-height:680px}
+.world-map-copy{padding:46px 0}
+@media(max-width:980px){.world-panel-map{--globe-x:55%;--globe-size:340px;--globe-radius:170px}}
+@media(max-width:680px){.world-panel-map{--globe-x:50%;--globe-size:274px;--globe-radius:137px}.world-panel.world-panel-map{min-height:640px}.world-map-copy{padding:45px 0}}
+@media(prefers-reduced-motion:reduce){.world-map-cartography{clip-path:none!important;transition:none!important}.world-map-contours{transform:none!important;transition:none!important}.world-map-globe{display:none!important}.world-map-route-layer{opacity:1!important;transition:none!important}}
