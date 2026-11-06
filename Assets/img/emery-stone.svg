@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="900" viewBox="0 0 1100 900">
+<defs>
+ <radialGradient id="back" cx="50%" cy="44%" r="80%"><stop stop-color="#63716c"/><stop offset="1" stop-color="#202c2a"/></radialGradient>
+ <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b9b9a7"/><stop offset=".4" stop-color="#777d75"/><stop offset="1" stop-color="#383d39"/></linearGradient>
+ <radialGradient id="stone"><stop stop-color="#d9d8c8"/><stop offset=".65" stop-color="#a6a99e"/><stop offset="1" stop-color="#596158"/></radialGradient>
+ <radialGradient id="hole"><stop stop-color="#1c2320"/><stop offset=".7" stop-color="#39423e"/><stop offset="1" stop-color="#5e685e"/></radialGradient>
+ <filter id="shadow"><feGaussianBlur stdDeviation="23"/></filter>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" seed="4" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".14"/></feComponentTransfer></filter>
+</defs>
+<rect width="1100" height="900" fill="url(#back)"/>
+<circle cx="850" cy="210" r="310" fill="#c9aa72" opacity=".06"/>
+<ellipse cx="543" cy="733" rx="362" ry="74" fill="#000" opacity=".48" filter="url(#shadow)"/>
+<g transform="translate(543 455) rotate(-12)">
+ <path d="M-322 75 A322 223 0 0 0 322 75 L322 178 A322 223 0 0 1 -322 178 Z" fill="url(#rim)" stroke="#494f49" stroke-width="6"/>
+ <ellipse cx="0" cy="66" rx="323" ry="225" fill="url(#stone)" stroke="#dbd8c7" stroke-width="13"/>
+ <ellipse cx="0" cy="66" rx="323" ry="225" fill="none" stroke="#313c35" stroke-width="4" opacity=".64"/>
+ <g stroke="#4b524d" stroke-width="3" opacity=".34"><path d="M-318 34 L-80 45"/><path d="M305 16 L72 55"/><path d="M-239 197 L-35 91"/><path d="M260 185 L37 98"/><path d="M-112 -125 L-25 28"/><path d="M115 -127 L27 24"/></g>
+ <ellipse cx="0" cy="66" rx="68" ry="48" fill="url(#hole)" stroke="#555e55" stroke-width="13"/>
+ <ellipse cx="0" cy="66" rx="29" ry="19" fill="#151d1c"/>
+ <ellipse cx="0" cy="66" rx="323" ry="225" filter="url(#grain)"/>
+ <path d="M-310 87 A323 225 0 0 0 310 87" fill="none" stroke="#e5e0cf" stroke-width="5" opacity=".48"/>
+ </g>
+<text x="62" y="815" fill="#c6b68c" font-family="Arial, sans-serif" font-size="18" letter-spacing="4">ILLUSTRATIVE PRODUCT RENDER</text>
+</svg>
