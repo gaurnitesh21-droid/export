@@ -21,4 +21,29 @@ window.addEventListener("scroll",schedule,{passive:true});
 window.addEventListener("resize",schedule,{passive:true});
 motion.addEventListener?.("change",schedule);
 render();
+/* Show a three-dimensional globe briefly when this section enters,
+   then unfold the same map into the full-width cartographic view. */
+if(motion.matches){section.classList.add("is-unfolded");}
+else{
+  section.classList.add("is-map-ready");
+  let started=false;
+  const unfold=()=>{
+    if(started)return;
+    started=true;
+    // Preserve a short globe hold so visitors perceive the sphere-to-flat transformation.
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      window.setTimeout(()=>section.classList.add("is-unfolded"),180);
+    }));
+  };
+  if("IntersectionObserver" in window){
+    const introObserver=new IntersectionObserver(entries=>{
+      if(entries.some(entry=>entry.isIntersecting && entry.intersectionRatio>=.11)){
+        introObserver.disconnect();
+        unfold();
+      }
+    },{threshold:[0,.11,.25]});
+    introObserver.observe(section);
+  }else{unfold();}
+  motion.addEventListener?.("change",()=>{if(motion.matches)section.classList.add("is-unfolded");});
+}
 })();
