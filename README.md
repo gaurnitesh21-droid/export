@@ -56,8 +56,16 @@ Image source credits appear in `credits.html`. Review Unsplash licensing and tec
 7. Add your final domain, canonical URLs, sitemap, analytics and search console.
 8. Test mobile browsers and destination-country compliance language.
 
-## Source files
+## Source files and brand assets
 
-`build.py` generates the HTML files from content and page templates. After changing content, run `python3 build.py`.
+The **checked-in HTML pages are the current source of truth**. The older \`build.py\` generator still contains outdated page templates from Draft 1 and **must not be run** until those templates have been synchronized; running it as-is would overwrite later product-catalogue, world-map, and logo updates.
+
+- \`assets/img/prime-reach-logo.svg\`: transparent vector adaptation based on the approved uploaded Prime Reach logo.
+- \`assets/img/favicon.svg\`: favicon using the monogram from that same artwork.
+- \`assets/css/branding.css\`: header and footer logo sizing and branded intro.
+- \`assets/js/intro.js\`: homepage intro timing and once-per-tab-session behavior.
+- \`index.html\`: 2–3-second homepage logo reveal on the first visit in each tab session. Returning to the homepage skips it. Reduced-motion preference skips the intro.
+
+The supplied image artwork reads "Prime Reach Exporters," while some website metadata currently reads "Prime Reach Exports." Confirm the final registered trading name before public launch and make the naming consistent.
 
 `assets/css/style.css` contains all styling; `assets/js/site.js` contains interactions.
