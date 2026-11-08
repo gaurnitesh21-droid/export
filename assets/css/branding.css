@@ -1,0 +1,31 @@
+/* Prime Reach Exporters brand system — logo extracted from the approved artwork */
+.site-header .brand{gap:0;line-height:1;flex:none}
+.site-header .brand-logo{display:block;height:78px;width:auto;max-width:170px;object-fit:contain}
+.site-header:not(.on-dark):not(.is-scrolled) .brand{background:#0b2c30;border-radius:4px;padding:0 6px}
+.site-footer .brand{gap:0}
+.site-footer .brand-logo{display:block;width:216px;height:auto;max-width:100%}
+.brand-logo{transition:filter .3s ease,transform .4s ease}
+.brand:hover .brand-logo{filter:drop-shadow(0 0 7px #ecc68e35)}
+@media(max-width:1150px){.site-header .brand-logo{height:68px}}
+@media(max-width:680px){
+ .site-header .brand-logo{height:61px;max-width:134px}
+ .site-footer .brand-logo{width:194px}
+ .site-header:not(.on-dark):not(.is-scrolled) .brand{padding:0 3px}
+}
+/* Intro is only enabled for the first homepage visit of a tab session. */
+.site-intro{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;overflow:hidden;visibility:hidden;opacity:0;pointer-events:none;background:radial-gradient(ellipse at 83% 84%,#295855 0%,transparent 36%),radial-gradient(ellipse at 54% 40%,#064f53 0%,transparent 50%),linear-gradient(140deg,#031f26 6%,#052d33 48%,#0c3437 100%);transition:opacity .48s ease,visibility .48s ease}
+.site-intro:before{content:"";position:absolute;width:min(820px,112vw);aspect-ratio:1;border:1px solid #f3d09b1c;border-radius:50%;box-shadow:0 0 90px #f0be785;background:radial-gradient(circle,#ffffff07,transparent 68%);transform:translateY(-7%);pointer-events:none}
+.site-intro:after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,#fff6 52%,transparent 70%);opacity:.055;pointer-events:none;transform:translateX(-100%);animation:brand-shimmer 2.4s ease-out both}
+.site-intro-inner{position:relative;width:min(590px,84vw);display:flex;flex-direction:column;align-items:center;gap:0;transform:scale(.92) translateY(14px);opacity:0;transition:transform .75s cubic-bezier(.22,1,.36,1),opacity .7s ease;will-change:transform,opacity}
+.site-intro-logo{display:block;width:100%;height:auto;max-height:58vh;filter:drop-shadow(0 18px 22px #0005)}
+.site-intro-subtitle{font-size:clamp(9px,1.05vw,12px);letter-spacing:.36em;font-weight:600;color:#e8d0ad;transform:translateY(-3px);text-transform:uppercase;text-align:center}
+.site-intro-progress{width:min(245px,54vw);height:1px;overflow:hidden;background:#e0c18b40;margin-top:27px;position:relative}
+.site-intro-progress:before{content:"";display:block;width:0;height:100%;background:#f6d19b;box-shadow:0 0 15px #e9c182;animation:intro-progress 2.15s cubic-bezier(.2,.5,.3,1) forwards}
+html.is-intro-active,html.is-intro-active body{overflow:hidden}
+html.is-intro-active .site-intro{visibility:visible;opacity:1;pointer-events:auto}
+html.is-intro-active .site-intro-inner{opacity:1;transform:scale(1) translateY(0)}
+html.is-intro-exiting .site-intro{opacity:0;pointer-events:none}
+html.is-intro-exiting .site-intro-inner{opacity:0;transform:scale(1.05) translateY(-9px)}
+@keyframes intro-progress{to{width:100%}}
+@keyframes brand-shimmer{45%{transform:translateX(100%)}100%{transform:translateX(100%)}}
+@media(prefers-reduced-motion:reduce){.site-intro{display:none!important}.site-intro-inner,.site-intro-progress:before{animation:none!important;transition:none!important}}
