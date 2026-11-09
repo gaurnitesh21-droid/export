@@ -1,6 +1,6 @@
-# Prime Reach Exports — Website (Draft 1)
+# Prime Reach Exporters — Website (Draft 1)
 
-A responsive, animated, multi-page static B2B website for Prime Reach Exports.
+A responsive, animated, multi-page static B2B website for Prime Reach Exporters.
 
 ## Open the website
 
@@ -66,6 +66,6 @@ The **checked-in HTML pages are the current source of truth**. The older \`build
 - \`assets/js/intro.js\`: homepage intro timing and once-per-tab-session behavior.
 - \`index.html\`: 2–3-second homepage logo reveal on the first visit in each tab session. Returning to the homepage skips it. Reduced-motion preference skips the intro.
 
-The supplied image artwork reads "Prime Reach Exporters," while some website metadata currently reads "Prime Reach Exports." Confirm the final registered trading name before public launch and make the naming consistent.
+Website copy, page titles, structured data, enquiry templates and logo now use **Prime Reach Exporters** consistently. Confirm the registered trading name before final publication.
 
 `assets/css/style.css` contains all styling; `assets/js/site.js` contains interactions.
