@@ -1,0 +1,218 @@
+/* Prime Reach Exporters | Header polish v1
+   Loaded after global and branding CSS on every page. */
+
+/* A stable, elegant announcement bar rather than a wrapping row. */
+.announcement{
+  height:34px;
+  min-height:34px;
+  padding:8px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  white-space:nowrap;
+  line-height:18px;
+  font-size:9px;
+  letter-spacing:.12em;
+}
+
+/* Consistent spacing across home/inner pages and transparent/sticky states. */
+.site-header{
+  height:86px;
+  box-sizing:border-box;
+}
+.site-header.on-dark:not(.is-scrolled){top:34px}
+.site-header .header-inner{
+  width:min(calc(100% - 56px),1360px);
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:clamp(14px,1.6vw,25px);
+  flex-wrap:nowrap;
+}
+.site-header .brand{
+  display:inline-flex;
+  flex:0 0 auto;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+  line-height:1;
+  white-space:nowrap;
+  overflow:visible;
+}
+.site-header .brand-logo{
+  display:block;
+  width:clamp(124px,10.3vw,149px);
+  height:auto;
+  max-height:78px;
+  max-width:none;
+  object-fit:contain;
+}
+/* White/gold logo on an ivory header needs a compact dark base. */
+.site-header:not(.on-dark):not(.is-scrolled) .brand{
+  background:#0b2c30;
+  border:1px solid #d3ae7240;
+  border-radius:6px;
+  padding:2px 7px;
+}
+.site-header.is-scrolled .brand{
+  background:transparent;
+  border:0;
+  padding:0;
+}
+.site-header .nav{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  flex:0 1 auto;
+  min-width:0;
+  margin-left:auto;
+  gap:clamp(12px,1.12vw,19px);
+  white-space:nowrap;
+}
+.site-header .nav>a,
+.site-header .nav-item>a{
+  display:inline-flex;
+  align-items:center;
+  min-height:42px;
+  padding:0;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.045em;
+  white-space:nowrap;
+}
+.site-header .nav-item{
+  position:relative;
+  display:flex;
+  align-items:center;
+  align-self:stretch;
+  padding:0;
+}
+.site-header .nav-dropdown{
+  position:absolute;
+  top:calc(100% - 1px);
+  left:-16px;
+  z-index:110;
+  width:232px;
+  padding:9px;
+  border:1px solid #e2e7dc;
+  border-radius:0 0 8px 8px;
+  box-shadow:0 18px 35px #031f2930;
+}
+.site-header .nav-dropdown a{
+  display:block;
+  padding:12px 11px;
+  line-height:1.4;
+  font-size:10px;
+  white-space:normal;
+}
+.site-header .header-cta{
+  display:inline-flex;
+  flex:0 0 auto;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  min-height:43px;
+  padding:10px 14px;
+  font-size:10px;
+  letter-spacing:.045em;
+  white-space:nowrap;
+}
+.site-header.is-scrolled{
+  top:0;
+  height:77px;
+  background:#09282ceF;
+  border-bottom:1px solid #ffffff24;
+  box-shadow:0 10px 35px #001d222a;
+}
+
+/* Tablets and small laptops use a deliberate, spacious menu. */
+@media(max-width:1160px){
+  .site-header .nav,
+  .site-header .header-cta{display:none!important}
+  .site-header .menu-toggle{
+    display:grid!important;
+    place-items:center;
+    flex:0 0 44px;
+    width:44px;
+    height:44px;
+    padding:0;
+    border-radius:5px;
+    font-size:25px;
+    line-height:1;
+    transition:background .25s ease,border-color .25s ease;
+  }
+  .site-header .menu-toggle:hover{background:#e6c59220}
+  .site-header .brand-logo{width:136px;max-height:71px}
+  .mobile-menu{
+    position:fixed;
+    inset:0;
+    z-index:99;
+    box-sizing:border-box;
+    height:100vh;
+    height:100dvh;
+    padding:110px max(24px,7vw) 28px;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    align-content:start;
+    justify-items:stretch;
+    background:#09282d;
+  }
+  .mobile-menu.open{display:grid;grid-auto-rows:max-content}
+  .mobile-menu a{
+    display:block;
+    font-family:Manrope,sans-serif;
+    font-size:clamp(21px,3.3vw,32px);
+    font-weight:600;
+    letter-spacing:-.035em;
+    line-height:1.25;
+    padding:10px 0;
+    border-bottom:1px solid #ffffff27;
+    transition:color .2s ease;
+  }
+  .mobile-menu a:hover,
+  .mobile-menu a:focus-visible{color:var(--gold2)}
+  .mobile-menu p{margin:24px 0 0;font-size:10px;letter-spacing:.16em}
+  .site-header.menu-open{
+    position:fixed!important;
+    top:0!important;
+    left:0;
+    right:0;
+    z-index:102;
+    background:#09282d!important;
+    border-bottom:1px solid #ffffff27!important;
+    box-shadow:none;
+  }
+  .site-header.menu-open .brand{
+    background:transparent!important;
+    border:0!important;
+    padding:0!important;
+  }
+  .site-header.menu-open .menu-toggle{
+    color:#fff!important;
+    border-color:#ffffff70!important;
+  }
+}
+@media(max-width:680px){
+  /* The three-part announcement is useful on desktop, not above a tiny screen. */
+  .announcement{display:none}
+  .site-header.on-dark:not(.is-scrolled){top:0}
+  .site-header{height:74px}
+  .site-header.is-scrolled{height:72px}
+  .site-header .header-inner{width:calc(100% - 36px);gap:12px}
+  .site-header .brand-logo{width:120px;max-height:64px}
+  .site-header:not(.on-dark):not(.is-scrolled) .brand{padding:2px 5px}
+  .site-header .menu-toggle{width:42px;height:42px;flex-basis:42px}
+  .mobile-menu{padding:92px 24px 26px}
+  .mobile-menu a{font-size:clamp(20px,5.5vw,27px);padding:10px 0}
+  .mobile-menu p{font-size:9px}
+}
+@media(max-width:360px){
+  .site-header .brand-logo{width:108px}
+  .mobile-menu a{font-size:20px;padding:9px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .site-header .menu-toggle,
+  .mobile-menu a{transition:none!important}
+}
