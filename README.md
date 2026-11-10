@@ -35,7 +35,15 @@ Business WhatsApp: +91 9694681337 (primary enquiry automation). Secondary contac
 
 ## Updating business information
 
-**Approved business details (provided by the business owner):**\n\n- Prime Reach Exporters\n- Opp. Nawa Nagar Palika, Kuchaman Road, Nawa City, Rajasthan, India – 341509\n- Phone / WhatsApp: +91 9694681337 and +91 9660014076\n- Primary email: sales@primereachexporters.in\n- Secondary email: primereachexporters@gmail.com\n\nWebsite footer, contact page and organization structured data use these details. The WhatsApp form defaults to the primary number.
+**Approved business details (provided by the business owner):**
+
+- Prime Reach Exporters
+- Opp. Nawa Nagar Palika, Kuchaman Road, Nawa City, Rajasthan, India – 341509
+- Phone / WhatsApp: +91 9694681337 and +91 9660014076
+- Primary email: sales@primereachexporters.in
+- Secondary email: primereachexporters@gmail.com
+
+Website footer, contact page and organization structured data use these details. The WhatsApp form defaults to the primary number.
 
 ## Replacing temporary images
 
